@@ -12,10 +12,10 @@ mydb= dbConnect(MySQL(), user='root',password='tsutweets', dbname='sample_tweets
 my_data=read_feather("sample_tweets.feather")
 
 #Creates a Table in mysql from my_data
-dbWriteTable(mydb, name="Tweets", value=my_data, append = TRUE, overwrite = FALSE)
+
 
 #Looking at the tables in mysql
-dbListTables(mydb)
+
 
 #Simple example Query (Saves the query on the server)
 tweet_query=dbSendQuery(mydb, "SELECT * FROM Tweets")
@@ -24,6 +24,7 @@ tweet_query=dbSendQuery(mydb, "SELECT * FROM Tweets")
 tweet_table=fetch(tweet_query, n=-1)
 
 #Seeing if it worked
-dim(tweet_table)
-dim(my_data)
+new=tweet_table
 
+
+#There is one more row, but thats ok (since mysql counts the header as a row, but feather doesn't). Success!
