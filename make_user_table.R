@@ -1,4 +1,5 @@
 
+
 #Sample for using RMySQL and R when mysql-server is hosted locally
 #Used 'https://www.r-bloggers.com/accessing-mysql-through-r/' as a guide
 
