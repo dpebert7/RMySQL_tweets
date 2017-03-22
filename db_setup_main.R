@@ -1,3 +1,7 @@
+# David Ebert
+# 21 March 2017
+# Script for setting up main tweets table, called Tweets, on Lab computer
+
 
 #Sample for using RMySQL and R when mysql-server is hosted locally
 #Used 'https://www.r-bloggers.com/accessing-mysql-through-r/' as a guide
@@ -17,7 +21,7 @@ dbconn = dbConnect(MySQL(), user='root', password='tsutweets', dbname='sample_tw
 
 # Initialize for loop
 raw_storage_directory = "/media/tsutweets/fc247505-6db9-4add-86b4-4982857a8fd2/raw_data" 
-max_imports = 369 # Max number of days' tweets to import. Current max is 369
+max_imports = 10 # Max number of days' tweets to import. Current max is 369
 files_to_import = list.files(path = paste(raw_storage_directory))
 print(files_to_import[1:max_imports])
 
